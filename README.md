@@ -1,4 +1,4 @@
-<h3 align="center">Fake Image Detection using Multimodal Techniques</h3>
+<h2 align="center">Fake Image Detection using Multimodal Techniques</h2>
 
 <p align="center">
   <em>This project aims to detect fake images by leveraging multimodal techniques, which include analyzing the image content, associated text (captions or descriptions), and metadata (EXIF data). The system integrates deep learning and machine learning models to make an accurate and robust prediction.</em>
