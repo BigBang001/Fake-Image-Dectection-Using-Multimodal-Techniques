@@ -21,11 +21,13 @@ def extract_metadata(image_path):
 
 def preprocess_text(text):
     """Tokenize and prepare text data."""
-    tokens = word_tokenize(text)
-    return ' '.join(tokens)
+    return ' '.join(word_tokenize(text.lower()))
 
-def vectorize_text(texts):
+def vectorize_text(texts, vectorizer=None):
     """Convert texts into numerical vectors."""
-    vectorizer = TfidfVectorizer()
-    text_vectors = vectorizer.fit_transform(texts)
+    if vectorizer is None:
+        vectorizer = TfidfVectorizer(ngram_range=(1, 2), max_df=0.8, min_df=5)
+        text_vectors = vectorizer.fit_transform(texts)
+    else:
+        text_vectors = vectorizer.transform(texts)
     return text_vectors, vectorizer
